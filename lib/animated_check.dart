@@ -105,7 +105,7 @@ class AnimatedPathPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final animationPercent = this._animation.value;
-
+    if(animationPercent == 0) return;
     final path = createAnimatedPath(_createAnyPath(size), animationPercent);
 
     final Paint paint = Paint();
